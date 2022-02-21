@@ -236,3 +236,32 @@ ReactDOM.render(
   e23, 
   document.getElementById('rootHandling3')
 );
+
+//List
+function MyList(props) {
+  const arr = props.data;
+  const listItems = arr.map((val) =>
+    <li>{val}</li>
+  );
+  return <ul>{listItems}</ul>;
+}
+const arr = ["A", "B", "C"];
+const e24 = <MyList data={arr} />; 
+ReactDOM.render(
+  e24, 
+  document.getElementById('rootList')
+);
+
+function MyList2(props) {
+  const arr2 = props.data;
+  const listItems = arr2.map((val, index) =>
+    <li key={index}>{val}</li>
+  );
+  return <ul>{listItems}</ul>;
+}
+const arr2 = ["A", "B", "C"];
+const e25 = <MyList2 data={arr2} />; 
+ReactDOM.render(
+  e25, 
+  document.getElementById('rootList2')
+);
